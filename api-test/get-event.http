@@ -1,0 +1,5 @@
+GET http://localhost:8080/events/2
+
+### 
+
+GET http://localhost:8080/events/2000
