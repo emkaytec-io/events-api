@@ -13,7 +13,7 @@ func InitDB() {
 	DB, err = sql.Open("sqlite3", "api.db")
 
 	if err != nil {
-		panic("could not connect to database")
+		panic("Could not connect to database.")
 	}
 
 	DB.SetMaxOpenConns(10)
@@ -37,6 +37,6 @@ func createTables() {
 	_, err := DB.Exec(createEventsTable)
 
 	if err != nil {
-		panic("could not create events table")
+		panic("Could not create events table.")
 	}
 }
