@@ -3,11 +3,13 @@ package main
 import (
 	"net/http"
 
+	"emkaytec.io/events-api/v2/db"
 	"emkaytec.io/events-api/v2/models"
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
+	db.InitDB()
 	server := gin.Default()
 
 	server.GET("/events", getEvents)
