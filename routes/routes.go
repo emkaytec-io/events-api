@@ -1,14 +1,24 @@
 package routes
 
-import "github.com/gin-gonic/gin"
+import (
+	"emkaytec.io/events-api/v2/middleware"
+	"github.com/gin-gonic/gin"
+)
 
 func RegisterRoutes(server *gin.Engine) {
 	// event routes
 	server.GET("/events", getEvents)
 	server.GET("/events/:id", getEvent)
-	server.POST("/events", createEvent)
-	server.PUT("/events/:id", updateEvent)
-	server.DELETE("/events/:id", deleteEvent)
+
+	// server.POST("/events", middleware.Authenticate, createEvent)
+	// server.PUT("/events/:id", middleware.Authenticate, updateEvent)
+	// server.DELETE("/events/:id", middleware.Authenticate, deleteEvent)
+
+	authenticated := server.Group("/")
+	authenticated.Use(middleware.Authenticate)
+	authenticated.POST("/events", createEvent)
+	authenticated.PUT("/events", updateEvent)
+	authenticated.DELETE("/events/:id", deleteEvent)
 
 	// user routes
 	server.POST("/signup", signup)
