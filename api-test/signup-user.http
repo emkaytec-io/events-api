@@ -5,3 +5,13 @@ Content-Type: application/json
   "email": "test@emkaytec.io",
   "password": "password123"
 }
+
+###
+
+POST http://localhost:8080/signup
+Content-Type: application/json
+
+{
+  "email": "test2@example.com",
+  "password": "Test"
+}

@@ -34,3 +34,16 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZW1rYXl0
   "location": "Another location",
   "dateTime": "2024-11-21T18:00:00.000Z"
 }
+
+### 
+
+POST http://localhost:8080/events
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QyQGV4YW1wbGUuY29tIiwiZXhwIjoxNzI4MTQ5ODA4LCJ1c2VySWQiOjJ9.PHAmJ7kR3U9iXn4dliHqxdFqRxzJZkj2a-PccqnKs-4
+
+{
+  "name": "The main event",
+  "description": "Event created by new user",
+  "location": "Another location",
+  "dateTime": "2024-12-31T22:00:00.000Z"
+}
